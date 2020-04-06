@@ -6,7 +6,7 @@ const resolvers = require("./resolver");
 const { ApolloServer } = require("apollo-server-express");
 const { router } = require("./api");
 
-app.use("/", router);
+app.use("https://spotify-wrapper-graphql.herokuapp.com", router);
 
 const server = new ApolloServer({
   typeDefs,
