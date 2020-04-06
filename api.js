@@ -23,7 +23,9 @@ router.get("/callback", async (req, res) => {
     const grant = await spotifyApi.authorizationCodeGrant(params);
     const token = grant.body.access_token;
     spotifyApi.setAccessToken(token);
-    return res.redirect("http://localhost:4000/graphql");
+    return res.redirect(
+      `https://spotify-wrapper-graphql.herokuapp.com/graphql`
+    );
   } catch (err) {
     console.log(err);
   }
